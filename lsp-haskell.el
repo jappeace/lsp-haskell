@@ -159,8 +159,7 @@ For example, use the following the start the hie process in a nix-shell:
 
 First searches for root via projectile.  Tries to find cabal file
 if projectile way fails"
-  ;; (if (and (fboundp 'projectile-project-root) (projectile-project-root))
-  (if nil
+  (if (and (fboundp 'projectile-project-root) (projectile-project-root))
       (projectile-project-root)
     (let ((dir (lsp-haskell--session-cabal-dir)))
       (if (string= dir "/")
